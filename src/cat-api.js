@@ -3,7 +3,6 @@ import axios from 'axios';
 axios.defaults.headers.common['x-api-key'] =
   'live_ZpsxYaY2I9CRaYfoTH4mKs5B5ZVSbbu4jcYjaJRDqrKXQm63Xj2vDeSzi65RrFFH';
 
-// Funkcja do pobierania kolekcji ras z API
 export function fetchBreeds() {
   return axios
     .get('https://api.thecatapi.com/v1/breeds')
@@ -14,7 +13,6 @@ export function fetchBreeds() {
     });
 }
 
-// Funkcja do pobierania informacji o kocie na podstawie identyfikatora rasy
 export function fetchCatByBreed(breedId) {
   return axios
     .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
