@@ -2,7 +2,7 @@ import { fetchBreeds, fetchCatByBreed } from './cat-api';
 
 document.addEventListener('DOMContentLoaded', function () {
   const breedSelect = document.querySelector('.breed-select');
-  const loader = document.querySelector('.loader');
+  const loader = document.querySelector('.spinner');
   const error = document.querySelector('.error');
   const catInfo = document.querySelector('.cat-info');
 
@@ -10,14 +10,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedBreed = breedSelect.value;
 
     loader.style.display = 'block';
+    breedSelect.style.display = 'none';
     error.style.display = 'none';
 
     fetchCatByBreed(selectedBreed)
       .then(cat => {
         loader.style.display = 'none';
-
+        breedSelect.style.display = 'block';
         if (cat && cat.url) {
-          catInfo.innerHTML = `<img src="${cat.url}" alt="Kot" />`;
+          const catHTML = `
+      <img src="${cat.url}" alt="Kot" />
+      <h2>Breed name: ${cat.breedInfo.name}</h2>
+      <p>${cat.breedInfo.description}</p>
+      <p>Temperament: ${cat.breedInfo.temperament}</p>
+    `;
+          catInfo.innerHTML = catHTML;
         } else {
           catInfo.innerHTML = 'Nie znaleziono zdjęć kota tej rasy.';
         }
