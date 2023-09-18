@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://jfrasinska.github.io/goit-js-hw-test",
+  "homepage": "https://jfrasinska.github.io/goit-js-hw-10",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-test/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
     "axios": "^1.5.0",
     "buffer": "^6.0.3",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6",
     "slim-select": "^2.6.0",
     "spinkit": "^2.0.1"
   },
